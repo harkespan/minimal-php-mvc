@@ -1,0 +1,13 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "^7.8",
+        "dompdf/dompdf": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+             "Classes\\": "app/Classes",
+             "Libraries\\": "app/Libraries"
+        }
+     }
+
+}
