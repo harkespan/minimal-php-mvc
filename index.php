@@ -3,6 +3,8 @@
 			require_once 'routes.php';
 			
 			$url = isset($_GET['url']) ? rtrim($_GET['url'], '/') : '';
+			$params = $_GET;
+			unset($params['url']);
 			if (array_key_exists($url, $routes)) 
 			{
 				$controllerAction = explode('@', $routes[$url]);
@@ -13,8 +15,11 @@
 				if (class_exists($dynamicClassName)) 
 				{
 					$instance = new $dynamicClassName();
-					$instance->$action();
-				} else {
+					call_user_func_array([$instance, $action], $params);
+
+				} 
+				else 
+				{
 					echo "Class $dynamicClassName does not exist.";
 				}
 				
