@@ -2,9 +2,10 @@
     namespace Classes;
     
     use Libraries\Database;
+    use Classes\BaseController;
     use PDO;
 
-    class Controller
+    class Main extends BaseController
     {
         private $db;
         private $dbh;
@@ -20,7 +21,8 @@
             /**
              * your code here
              */
-            require_once('app/Views/index.php');
+            $data = ['title' => 'Welcome'];
+            $this->view('index', $data);
         }
 
     }
