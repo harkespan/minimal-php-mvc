@@ -2,7 +2,7 @@
     namespace Classes;
     
     use Libraries\Database;
-    use App\Classes\BaseController;
+    use Classes\BaseController;
     use PDO;
 
     class Main extends BaseController
